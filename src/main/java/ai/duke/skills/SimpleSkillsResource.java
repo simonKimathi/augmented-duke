@@ -21,6 +21,8 @@ public class SimpleSkillsResource {
                .append(skilledAiService.chat("Who is a famous White Pekin duck??"))
                .append("\n\n")
                .append(skilledAiService.chat("What does a White Pekin duck say?"))
+               .append("\n\n")
+               .append(skilledAiService.chat("Where does White Pekin ducks live?"))
                .toString();
     }
 }
