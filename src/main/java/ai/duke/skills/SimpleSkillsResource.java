@@ -1,5 +1,6 @@
 package ai.duke.skills;
 
+import ai.duke.chat.SimpleChatAiService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -10,6 +11,9 @@ import jakarta.ws.rs.core.MediaType;
 public class SimpleSkillsResource {
 
     @Inject
+    private SimpleChatAiService aiService;
+
+    @Inject
     private SimpleSkillsAiService skilledAiService;
 
     @GET
@@ -17,6 +21,8 @@ public class SimpleSkillsResource {
     public String callAI() {
 
        return new StringBuilder()
+               .append("*** No Skills Added***\n")
+               .append(aiService.chat("What does a White Pekin duck say?"))
                .append("Famous Duck: ")
                .append(skilledAiService.chat("Who is a famous White Pekin duck??"))
                .append("\n\n")
