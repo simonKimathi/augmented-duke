@@ -17,7 +17,7 @@ public class SimpleRagResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String callAI() {
 
-//        return simpleRagAiService.askAboutDocuments("What cars Quacks for Ducks Car Rental have?");
-        return simpleRagAiService.askAboutDocuments("What cars do ducks rent?");
+        return simpleRagAiService.askAboutDocuments("What cars Quacks for Ducks Car Rental have?");
+//        return simpleRagAiService.askAboutDocuments("What cars do ducks rent?");
     }
 }

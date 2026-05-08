@@ -15,7 +15,6 @@ import jakarta.enterprise.event.Observes;
 import jakarta.inject.Inject;
 
 import java.io.File;
-import java.net.URL;
 import java.util.List;
 
 @ApplicationScoped
@@ -30,17 +29,7 @@ public class DocumentLoader {
     void loadDocuments(@Observes @Initialized(ApplicationScoped.class) Object pointless) {
 
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        URL docsUrl = classLoader.getResource("docs");
-        File docsDir = new File(docsUrl.getFile());
-
-        System.out.println("""
-        
-           %s
-           
-           
-        """
-
-                .formatted(docsDir.getPath()));
+        File docsDir = new File(classLoader.getResource("docs").getFile());
 
         List<Document> documents = FileSystemDocumentLoader.loadDocuments(docsDir.getPath(), new TextDocumentParser());
 

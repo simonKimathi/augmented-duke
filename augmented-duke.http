@@ -13,8 +13,13 @@ GET http://localhost:8080/augmented-duke/ai/memory/more
 Content-Type: text/plain
 ###
 
-### Memory 2
+### RAG
 GET http://localhost:8080/augmented-duke/ai/rag
+Content-Type: text/plain
+###
+
+### MCOP
+GET http://localhost:8080/augmented-duke/ai/mcp
 Content-Type: text/plain
 ###
 
